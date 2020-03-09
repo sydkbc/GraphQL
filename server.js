@@ -15,7 +15,7 @@ app.use(
 );
 
 app.listen(8080, () => {
-  console.log("Server started on PORT:5000");
+  console.log("Server started on PORT:8080");
 });
 
 // Example Queries that can be tested under http://localhost:5000/graphQL //
