@@ -57,7 +57,10 @@ const RootQuery = new GraphQLObjectType({
       resolve(parents, args) {
         return axios
           .get("https://api.spacexdata.com/v3/launches")
-          .then(res => res.data);
+          .then(res => {
+                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        res.data
+        });
       }
     },
     launch: {
@@ -68,7 +71,10 @@ const RootQuery = new GraphQLObjectType({
       resolve(parents, args) {
         return axios
           .get(`https://api.spacexdata.com/v3/launches/${args.flight_number}`)
-          .then(res => res.data);
+          .then(res => {
+                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        res.data
+        });
       }
     },
     rockets: {
@@ -76,7 +82,10 @@ const RootQuery = new GraphQLObjectType({
       resolve(parents, args) {
         return axios
           .get("https://api.spacexdata.com/v3/rockets")
-          .then(res => res.data);
+          .then(res => {
+                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        res.data
+        });
       }
     },
     rocket: {
@@ -86,7 +95,10 @@ const RootQuery = new GraphQLObjectType({
       },
       resolve(parents, args) {
         return axios
-          .get(`https://api.spacexdata.com/v3/rockets/${args.id}`)
+          .then(res => {
+                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        res.data
+        });
           .then(res => res.data);
       }
     }
