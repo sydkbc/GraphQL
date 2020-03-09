@@ -95,11 +95,11 @@ const RootQuery = new GraphQLObjectType({
       },
       resolve(parents, args) {
         return axios
+          .get("https://api.spacexdata.com/v3/rockets/${args.id}")
           .then(res => {
                         res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
                         res.data
         });
-          .then(res => res.data);
       }
     }
   }
