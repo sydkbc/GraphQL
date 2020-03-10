@@ -2,6 +2,9 @@ const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const schema = require("./schema");
 const cors = require("cors");
+require("dotenv").config();
+
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use(cors());
@@ -14,8 +17,8 @@ app.use(
   })
 );
 
-app.listen(8080, () => {
-  console.log("Server started on PORT:8080");
+app.listen(PORT, () => {
+  console.log("Server started on PORT: ", PORT);
 });
 
 // Example Queries that can be tested under http://localhost:5000/graphQL //
