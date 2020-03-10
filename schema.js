@@ -58,7 +58,7 @@ const RootQuery = new GraphQLObjectType({
         return axios
           .get("https://api.spacexdata.com/v3/launches")
           .then(res => {
-                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        //res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
                         res.data
         });
       }
@@ -72,7 +72,7 @@ const RootQuery = new GraphQLObjectType({
         return axios
           .get(`https://api.spacexdata.com/v3/launches/${args.flight_number}`)
           .then(res => {
-                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        //res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
                         res.data
         });
       }
@@ -83,7 +83,7 @@ const RootQuery = new GraphQLObjectType({
         return axios
           .get("https://api.spacexdata.com/v3/rockets")
           .then(res => {
-                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        //res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
                         res.data
         });
       }
@@ -97,7 +97,7 @@ const RootQuery = new GraphQLObjectType({
         return axios
           .get("https://api.spacexdata.com/v3/rockets/${args.id}")
           .then(res => {
-                        res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+                        //res.header("Access-Control-Allow-Headers", 'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
                         res.data
         });
       }
